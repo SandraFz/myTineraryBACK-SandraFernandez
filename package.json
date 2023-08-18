@@ -1,0 +1,28 @@
+{
+  "name": "mytineraryback-sandrafernandez",
+  "version": "1.0.0",
+  "description": "Proyecto de MindHub",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./bin/www.js",
+    "dev": "nodemon ./bin/www.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SandraFz/myTineraryBACK-SandraFernandez.git"
+  },
+  "author": "Sandra N. Fernández",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SandraFz/myTineraryBACK-SandraFernandez/issues"
+  },
+  "homepage": "https://github.com/SandraFz/myTineraryBACK-SandraFernandez#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.4.3"
+  }
+}
