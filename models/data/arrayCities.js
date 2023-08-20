@@ -1,5 +1,4 @@
-{
-    "cities":
+const arrayCities =
     [
         {
         "name":"Amsterdam",
@@ -74,6 +73,6 @@
         "description":""
         }
     ]
-}
 
+export default arrayCities
 

@@ -6,16 +6,16 @@ try {
     let queries = {}
     let searchName = req.query.name
     if(req.query.name) {queries.name = new RegExp(searchName, 'i')}
-    console.log('quieries = ' +queries.name)
-    const firstFilter = await Cities.find(queries)/* .sort({name: 1}) */
-    //console.log(`firstFilter == ${firstFilter}`)
+    //console.log('quieries = ' +queries.name)
+    const firstFilter = await Cities.find(queries).sort({name: 1})
     const secondFilter = []
-    firstFilter.filter(elem => //{if (firstFilter.startsWith(searchName)) r
-        {if(elem.name.toLowerCase().startsWith(searchName.toLowerCase())){
+    firstFilter.filter(elem => {
+        
+        if(elem.name.toLowerCase().startsWith(searchName.toLowerCase())){
             secondFilter.push(elem)}
             return secondFilter
         }
-        )
+    )
     console.log('secondFilter value ==' +secondFilter)
     return res.status(200).json({
         success: true,
