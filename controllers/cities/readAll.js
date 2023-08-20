@@ -1,11 +1,11 @@
-import Cities from "../../models/City";
+import Cities from "../../models/City.js";
 
 export default async(req, res, next)=>{
     try {
-        await Cities.find()
+        let list = await Cities.find().sort({name: 1})
         return res.status(200).json({
             success: true,
-            message: 'Here they are!'
+            message: list
         })
     } catch (error) {
         console.log(error)

@@ -1,8 +1,13 @@
-import Cities from "../../models/City";
+import Cities from "../../models/City.js";
 
-async (req, res, next)=>{
+export default async (req, res, next)=>{
    try {
-    await Cities.find(req.body)
+    const oneCity = await Cities.findById(req.params.id)
+        console.log(oneCity)
+        return res.status(200).json({
+            success: true,
+            oneCity
+        })
    } catch (error) {
     console.log(error)
     return res.status(500).json({
