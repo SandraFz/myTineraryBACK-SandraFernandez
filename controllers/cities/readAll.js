@@ -5,7 +5,7 @@ export default async(req, res, next)=>{
         let list = await Cities.find().sort({name: 1})
         return res.status(200).json({
             success: true,
-            message: list
+            list
         })
     } catch (error) {
         console.log(error)
