@@ -9,9 +9,9 @@ import deleteCity from "../controllers/cities/deleteCity.js";
 let citiesRouter = Router()
 
 citiesRouter.post('/', create)
-citiesRouter.get('/', readAll)
 citiesRouter.get('/name/:name', readName)
-citiesRouter.get('/id/:id', readOne)
+citiesRouter.get('/:id', readOne)
+citiesRouter.get('/', readAll)
 citiesRouter.put('/:id', update)
 citiesRouter.delete('/:id', deleteCity)
 
