@@ -6,7 +6,7 @@ try {
     let queries = {}
     let searchName = req.query.name
 
-    if(req.query.name) {queries.name = new RegExp(searchName, 'i')}
+    if(searchName) {queries.name = new RegExp(searchName, 'i')}
     
     const firstFilter = await Cities.find(queries).sort({name: 1})
     const secondFilter = []
@@ -15,7 +15,6 @@ try {
         
         if(elem.name.toLowerCase().startsWith(searchName.toLowerCase())){
             secondFilter.push(elem)}
-            return secondFilter
         }
     )
 
@@ -26,13 +25,13 @@ try {
     return res.status(200).json({
         success: true,
         count,
-        response: count >= 1? secondFilter:"No hay ciudades que coincidan"
+        response: count >= 1? secondFilter:"No find cities calls like that"
     })
 } catch (error) {
     console.log(error)
     return res.status(500).json({
         success: false,
-        message: "Algo falló"
+        message: "Something is wrong"
     })
 }
 }
