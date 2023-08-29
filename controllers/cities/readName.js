@@ -6,8 +6,8 @@ try {
     let queries = {}
     let searchName = req.query.name
 
-    if(searchName) {queries.name = new RegExp(searchName, 'i')}
-    
+    if(searchName) {queries.name = new RegExp(searchName, 'i')
+    console.log(queries.name)
     const firstFilter = await Cities.find(queries).sort({name: 1})
     const secondFilter = []
 
@@ -26,7 +26,7 @@ try {
         success: true,
         count,
         response: count >= 1? secondFilter:"No find cities calls like that"
-    })
+    })}
 } catch (error) {
     console.log(error)
     return res.status(500).json({
