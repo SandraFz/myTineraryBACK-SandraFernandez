@@ -10,7 +10,7 @@ let schema = new Schema({
     likes:{type: Number},
     Hastags:{type: String},
     Comments:{type: Types.ObjectId},
-    city:{type: Types.ObjectId, ref: 'cities'}    
+    city:{type: Schema.Types.ObjectId, ref: 'cities'}    
 }, {timestamps: true})
 
 let Itineraries = model(collection, schema);

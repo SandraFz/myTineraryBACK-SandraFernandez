@@ -3,6 +3,7 @@ import Cities from "../../models/City.js";
 export default async (req, res, next)=>{
    try {
     const oneCity = await Cities.findById(req.params.id)
+                            .populate({path:"itineraries"})
         console.log(oneCity)
         return res.status(200).json({
             success: true,

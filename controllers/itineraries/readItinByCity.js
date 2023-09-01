@@ -19,7 +19,7 @@ export default async(req, res) => {
         
         return res.status(200).json({
             success: true,
-            response: count >=1 ? itinByCities: "No find itineraries"
+            message: count >=1 ? itinByCities: "No find itineraries"
         })
     } catch (error) {
         console.log(error)
