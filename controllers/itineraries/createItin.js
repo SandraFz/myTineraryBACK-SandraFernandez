@@ -3,11 +3,24 @@ import Itineraries from "../../models/Itinerary.js";
 
 export default async(req, res) =>{
     try {
-        await Itineraries.create(req.body)
+        
+    const newItin = await Itineraries.create(req.body)
+    
+    const city = await Cities.findById(req.params.id_city)
+    
+    /* const arrayItin = city.itineraries.push(newItin._id) */
+    console.log(newItin)
+    const updateCity = await Cities.findByIdAndUpdate(
+            city._id,
+            {$push: {itineraries: newItin}},
+            {new: true}
+    )
+   /*  console.log() */
         
         return res.status(201).json({
             success: true,
-            message: 'created!'
+            message: 'created!',
+            updateCity
         })
         
     } catch (error) {
