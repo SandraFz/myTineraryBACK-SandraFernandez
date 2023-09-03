@@ -1,4 +1,4 @@
-import Itineraries from "../../models/Itinerary";
+/* import Itineraries from "../../models/Itinerary";
 
 export default async(req, res) => {
     try {
@@ -12,4 +12,4 @@ export default async(req, res) => {
             message: "Filed connection"
         })
     }
-}
+} */
