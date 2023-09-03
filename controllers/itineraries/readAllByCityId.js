@@ -1,9 +1,9 @@
-/* import Itineraries from "../../models/Itinerary";
+import Itineraries from "../../models/Itinerary";
 
 export default async(req, res) => {
     try {
 
-        let itin = await Itineraries.find({city._id = req.query._id})
+        let itin = await Itineraries.find()
         
     } catch (error) {
         console.log(error)
@@ -12,4 +12,4 @@ export default async(req, res) => {
             message: "Filed connection"
         })
     }
-} */
+}

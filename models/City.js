@@ -7,7 +7,9 @@ let schema = new Schema({
     image:{type: String, required: true},
     country:{type: String},
     description:{type: String},
-    itineraries:[{type: Schema.Types.ObjectId, ref: 'itineraries'}]
+    itineraries:[
+        {type: Types.ObjectId, ref: 'itineraries'}
+    ]
 }, {timestamps: true});
 
 let Cities = model(collection, schema);
