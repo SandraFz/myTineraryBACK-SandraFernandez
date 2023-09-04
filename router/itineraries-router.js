@@ -8,7 +8,7 @@ import deleteItin from "../controllers/itineraries/deleteItin.js";
 
 let itinerariesRouter = Router()
 
-itinerariesRouter.post('/', createItin)
+itinerariesRouter.post('/:id_city', createItin)
 itinerariesRouter.get('/byCity', readItinByCityRouter)
 itinerariesRouter.get('/', readAllItin)
 itinerariesRouter.get('/:id', readOneItin)

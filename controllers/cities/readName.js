@@ -22,11 +22,18 @@ try {
    
     console.log('count=  ' + count)
     
-    return res.status(200).json({
+    return res.status(200).json(count >= 1?
+        {
         success: true,
         count,
-        response: count >= 1? secondFilter:"No find cities calls like that"
-    })}
+        response:  secondFilter
+        }:{
+            success:true,
+            count,
+            response: [],
+            message:"No find cities calls like that"
+        }
+    )}
 } catch (error) {
     console.log(error)
     return res.status(500).json({
