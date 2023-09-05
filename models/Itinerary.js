@@ -8,8 +8,8 @@ let schema = new Schema({
     image:{type: String, required: true},
     duration:{type: Number, required: true},
     likes:{type: Number},
-    Hastags:{type: String},
-    Comments:{type: Types.ObjectId},
+    hastags:{type: String},
+    comments:{type: Types.ObjectId},
     city:{type: Schema.Types.ObjectId, ref: 'cities'}    
 }, {timestamps: true})
 
