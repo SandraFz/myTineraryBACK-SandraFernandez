@@ -24,7 +24,7 @@ export default async (req, res) =>{
 
         const {name, lastName, email, photo, country} = loginUser
 
-        const token = jwt.sign({name, lastName, email, photo, country}, process.env.KEY) 
+        const token = jwt.sign({name, lastName, email, photo, country}, process.env.KEY,{expiresIn: '1h'}) 
 
             return res.status(200).json({
                 success: true,
