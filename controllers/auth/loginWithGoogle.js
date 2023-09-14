@@ -12,18 +12,7 @@ export default async (req, res) =>{
         console.log(loginUser)
         
         if(!loginUser){
-            return res.json({
-                message: "Invalid email"
-            })
-        }
-        
-        const validPassword = bcrypt.compareSync(password, loginUser.password)
-        console.log(validPassword)
-
-        if(!validPassword) {
-            return res.json({
-                message: "Email or password is invalid"
-            })
+            throw new Error("Invalid email")
         }
 
         const {name, lastName, email, photo, country} = loginUser

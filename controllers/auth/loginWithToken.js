@@ -1,13 +1,13 @@
 import Users from "../../models/User.js";
 
 export default async (req, res) => {
-    /* console.log(req) */
+    console.log(req.user.email)
     try{
-        const logedUser = await Users.findOne({email: req.email})
-        console.log(req.user)
-        return res.json(
+        const logedUser = await Users.findOne({email: req.user.email})
+        /* console.log(logedUser) */
+        return res.status(200).json(
             {success: true,
-            logedUser}
+            logedUser: logedUser}
         )
     } catch(error){
         console.log(error)
