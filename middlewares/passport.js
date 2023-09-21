@@ -8,7 +8,6 @@ const options = {
 }
 
 const fn = async (payload, next) => {
-   /* console.log(payload) */
    console.log(payload)
    next(null, payload)
 } 

@@ -29,8 +29,6 @@ export default async (req, res) => {
                 message: 'Email already exists.'
             })
         }
-    
-        
         
     } catch (error) {
         console.log(error)

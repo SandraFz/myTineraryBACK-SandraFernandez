@@ -13,6 +13,7 @@ export default async (req, res) =>{
         
         if(!loginUser){
             return res.json({
+                success: false,
                 message: "Invalid email"
             })
         }
@@ -22,6 +23,7 @@ export default async (req, res) =>{
 
         if(!validPassword) {
             return res.json({
+                success: false,
                 message: "Email or password is invalid"
             })
         }

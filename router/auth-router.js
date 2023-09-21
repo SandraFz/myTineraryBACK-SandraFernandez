@@ -12,7 +12,7 @@ const authRouter = Router()
 
 authRouter.post('/up', validator(singUpSchema), /* emailExists, */ singUp)
 authRouter.post('/in', login)
-authRouter.post('/token', passport.authenticate('jwt', { session: false }), loginWithToken)
-authRouter.get('/', loginWithGoogle)
+authRouter.get('/token', passport.authenticate('jwt', { session: false }), loginWithToken)
+/* authRouter.get('/', loginWithGoogle) */
 
 export default authRouter
